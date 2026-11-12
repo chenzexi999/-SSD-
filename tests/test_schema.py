@@ -5,7 +5,7 @@ import math
 import pandas as pd
 import pytest
 
-from fvslab.schema import load, validate
+from ssd.schema import load, validate
 from conftest import make_raw_results
 
 

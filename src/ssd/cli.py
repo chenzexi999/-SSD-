@@ -1,4 +1,4 @@
-"""fvslab 命令行入口。
+"""ssd 命令行入口。
 
 子命令:
 - figures:  从 data/ 生成全部图与表格;
@@ -60,8 +60,8 @@ def _cmd_validate_plan(args: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="fvslab", description="SSD 过滤向量检索实验分析工具")
-    parser.add_argument("--version", action="version", version=f"fvslab {__version__}")
+    parser = argparse.ArgumentParser(prog="ssd", description="SSD 过滤向量检索实验分析工具")
+    parser.add_argument("--version", action="version", version=f"ssd {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_fig = sub.add_parser("figures", help="从 data/ 生成图与表格")

@@ -9,7 +9,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from fvslab.schema import ALL_FIELDS
+from ssd.schema import ALL_FIELDS
 
 #: 10 个配置的基准值(system, bucket, L, recall, latency_us, qps, mean_ios)
 BASELINE = [
@@ -100,7 +100,7 @@ def raw_results() -> pd.DataFrame:
 @pytest.fixture
 def aggregated_csv(tmp_path) -> str:
     """写出聚合好的 10 行汇总表(与 data/aggregated.csv 同构)。"""
-    from fvslab.aggregate import aggregate
+    from ssd.aggregate import aggregate
 
     path = tmp_path / "results.csv"
     make_raw_results().to_csv(path, index=False)

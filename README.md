@@ -1,4 +1,4 @@
-# fvs-lab-analysis
+# SSD
 
 《基于 SSD 的过滤向量检索系统性能测试与设计比较》课程实验的**结果分析与绘图代码库**。
 
@@ -15,7 +15,7 @@
 ## 仓库结构
 
 ```text
-fvs-lab-analysis/
+SSD/
 ├── data/                  # 聚合结果(唯一绘图输入),含字段与来源说明
 │   ├── aggregated.csv         # 10 个配置:三轮中位数/最小/最大
 │   ├── internal_metrics.csv   # 两套系统的专有内部指标
@@ -25,7 +25,7 @@ fvs-lab-analysis/
 ├── scripts/
 │   ├── make_figures.py        # 生成全部图与表格
 │   └── refresh_data.py        # 从课程 30 行 results.csv 重新聚合 data/
-├── src/fvslab/            # Python 包
+├── src/ssd/            # Python 包
 │   ├── schema.py              # 课程结果 CSV 的字段定义与校验
 │   ├── aggregate.py           # 三轮聚合(中位数/最小/最大)
 │   ├── figures.py             # 核心图 1/2 与补充图 3/4
@@ -42,7 +42,7 @@ fvs-lab-analysis/
 pip install -e ".[dev]"
 
 # 从 data/ 生成全部图(pdf + png)与报告表格
-fvslab figures --tables
+ssd figures --tables
 
 # 运行测试
 pytest
@@ -67,17 +67,17 @@ Linux: Noto CJK/WenQuanYi),找不到时给出告警但仍可运行。
 
 ```text
 course_runs/experiments/<id>/results.csv   (课程脚本聚合,30 行)
-        │  fvslab refresh --results-csv ...
+        │  ssd refresh --results-csv ...
         ▼
 data/aggregated.csv + internal_metrics.csv + resources.csv
-        │  fvslab figures --tables
+        │  ssd figures --tables
         ▼
 figures/*.pdf|png + tables/*.md
 ```
 
 `data/` 当前内容转录自《实验报告》4.1–4.3 表格;实验机恢复后运行
 `refresh_data.py` 即可从原始 30 行 CSV 重新聚合,保证数据与绘图完全一致。
-聚合规则与字段语义见 `data/README.md` 与 `src/fvslab/schema.py`。
+聚合规则与字段语义见 `data/README.md` 与 `src/ssd/schema.py`。
 
 ## 核心结果(详见报告)
 
@@ -96,7 +96,7 @@ figures/*.pdf|png + tables/*.md
 L=320。本仓库提供验证计划执行器(仅 Linux 实验环境,需课程数据集与索引):
 
 ```bash
-fvslab validate-plan \
+ssd validate-plan \
   --repo ~/fvs-course-lab/systems/GateANN-public \
   --dataset-root ~/fvs-course-lab/datasets/yfcc_course_v1 \
   --run-root ~/fvs-course-lab/course_runs \
@@ -104,7 +104,7 @@ fvslab validate-plan \
 ```
 
 对照组为正式实验 GateANN Low L=320;自变量仅 L;支持/否定判据见报告第 5 节
-Validation Plan 与 `src/fvslab/validate.py` 文档字符串。
+Validation Plan 与 `src/ssd/validate.py` 文档字符串。
 
 ## 结果边界(公平性声明)
 

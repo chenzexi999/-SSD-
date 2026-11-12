@@ -149,7 +149,7 @@ def aggregate(raw: pd.DataFrame) -> AggregatedResult:
     """把课程聚合结果(30 行)汇总为 10 个配置的中位数与范围。
 
     Args:
-        raw: 已经过 :func:`fvslab.schema.load` 校验与数值化的 DataFrame。
+        raw: 已经过 :func:`ssd.schema.load` 校验与数值化的 DataFrame。
 
     Returns:
         AggregatedResult(summary, internal, resources)。

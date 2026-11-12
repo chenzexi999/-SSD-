@@ -40,7 +40,7 @@
   保证数据与绘图完全一致:
 
   ```bash
-  fvslab refresh --results-csv course_runs/experiments/20260930-072449/results.csv
+  ssd refresh --results-csv course_runs/experiments/20260930-072449/results.csv
   ```
 
   聚合规则:按 `system + bucket + L` 分组取中位数/最小/最大;

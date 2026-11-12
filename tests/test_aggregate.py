@@ -3,7 +3,7 @@
 import pandas as pd
 import pytest
 
-from fvslab.aggregate import aggregate
+from ssd.aggregate import aggregate
 from conftest import BASELINE, make_raw_results
 
 

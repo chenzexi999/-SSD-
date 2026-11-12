@@ -10,7 +10,7 @@ matplotlib.use("Agg")
 import pandas as pd  # noqa: E402
 import pytest  # noqa: E402
 
-from fvslab.figures import (  # noqa: E402
+from ssd.figures import (  # noqa: E402
     fig_gateann_time_decomposition,
     fig_internal_behavior,
     fig_recall_latency,
