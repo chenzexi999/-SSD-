@@ -1,0 +1,9 @@
+# 统一行尾:文本文件以 LF 入库,Windows 检出 CRLF
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.pdf binary
+*.png binary
