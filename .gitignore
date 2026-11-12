@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+
+# 测试与工具缓存
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 数据与输出
+# 默认不跟踪 figures/ 输出,生成后本地查看即可;如需保留请显式 add
+figures/*.pdf
+figures/*.png
+tables/*.md
+
+# 课程运行数据(course_runs)不进入本仓库
+course_runs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

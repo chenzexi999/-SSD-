@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fvslab"
+version = "1.0.0"
+description = "基于 SSD 的过滤向量检索系统(PipeANN-Filter / GateANN)性能测试与设计比较——实验结果聚合、绘图与验证计划工具"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "fvs-lab-analysis contributors" }]
+keywords = ["vector-search", "ssd", "ann", "filtered-search", "benchmark", "course-lab"]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+fvslab = "fvslab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
