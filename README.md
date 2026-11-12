@@ -7,7 +7,7 @@
 两套 SSD 驻留过滤向量检索系统进行 3 轮独立重复测试,测量 Recall@10、查询时延、
 逻辑 I/O 与峰值内存,并据此完成设计比较与优化方向设计。
 
-- 实验报告:`docs/实验报告.pdf`
+- 实验报告按课程要求单独提交 PDF,不包含在本仓库;
 - 正式实验 experiment-id:`20260930-072449`(3 轮 × 10 配置 = 30 行原始结果)
 - 课程仓库:<https://gitee.com/wei-fangyu/fvs-course-lab>(数据集、预构建索引、
   固定源码与运行脚本均来自课程,本仓库不含这些内容)
@@ -33,7 +33,6 @@ fvs-lab-analysis/
 │   ├── validate.py            # 验证计划实验执行器(GateANN Low L 扫描)
 │   └── cli.py                 # 命令行入口
 ├── tests/                 # 单元测试与绘图冒烟测试
-├── docs/实验报告.pdf       # 提交的实验报告
 └── .github/workflows/ci.yml   # GitHub Actions:pytest
 ```
 
