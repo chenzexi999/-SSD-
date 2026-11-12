@@ -72,6 +72,8 @@ GATEANN_FIELDS = (
 INTERNAL_FIELDS = PIPEANN_FIELDS + GATEANN_FIELDS
 
 #: Selectivity 描述字段(同一 bucket 内恒定,不做跨轮聚合)
+#: Selectivity 描述字段(同一 bucket 内恒定,不做跨轮聚合)。
+#: 课程 CSV 以比例存储(0.545% -> 0.00545);聚合输出统一转为百分数。
 SELECTIVITY_FIELDS = ("selectivity_min", "selectivity_median", "selectivity_max")
 
 ALL_FIELDS = IDENTITY_FIELDS + SELECTIVITY_FIELDS + METRIC_FIELDS + INTERNAL_FIELDS

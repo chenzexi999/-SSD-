@@ -85,6 +85,10 @@ def _build_summary(raw: pd.DataFrame) -> pd.DataFrame:
             row[f"{prefix}_max"] = stats["max"]
         rows.append(row)
     summary = pd.DataFrame(rows)
+    # 课程 CSV 中 Selectivity 以比例存储(0.545% -> 0.00545),统一转为百分数
+    for field in SELECTIVITY_FIELDS:
+        if field in summary.columns:
+            summary[field] = summary[field] * 100.0
     # 统一单位换算
     if "peak_rss_mib_median" in summary.columns:
         for part in ("median", "min", "max"):
